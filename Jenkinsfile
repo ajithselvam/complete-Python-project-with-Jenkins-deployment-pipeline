@@ -1,17 +1,21 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.10'
+        }
+    }
 
     stages {
-
-        stage('Clone Repo') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/ajithselvam/complete-Python-project-with-Jenkins-deployment-pipeline.git'
+                git branch: 'main',
+                    url: 'https://github.com/ajithselvam/complete-Python-project-with-Jenkins-deployment-pipeline.git'
             }
         }
 
         stage('Run Python App') {
             steps {
-                sh 'python3 app.py'
+                sh 'python app.py'
             }
         }
     }
