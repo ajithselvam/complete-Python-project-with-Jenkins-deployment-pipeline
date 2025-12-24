@@ -74,3 +74,20 @@ groovydocker run -d \
     -e DATABASE_URL=your_db \
     -e API_KEY=your_key \
     ...
+
+
+
+
+    Quick Setup Commands
+Create all files
+touch requirements.txt Dockerfile Jenkinsfile app.py
+
+# Copy the content above into each file
+
+# Initialize git and push to GitHub
+git init
+git add .
+git commit -m "Initial commit - Python Flask Jenkins deployment"
+git remote add origin https://github.com/yourusername/your-repo.git
+git branch -M main
+git push -u origin main
